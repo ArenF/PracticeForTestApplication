@@ -2,7 +2,8 @@ package com.example.practicefortestapplication.p04facilitydetail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -20,19 +21,23 @@ class FacilityNavActivity : AppCompatActivity() {
     private lateinit var binding: P04ActivityFacilityNavBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    // FragmentContainerView 로 띄운 NavHost 는 FragmentManager 에서 꺼내야 안전하다.
+    private val navController: NavController
+        get() = (supportFragmentManager
+            .findFragmentById(R.id.nav_host_p04) as NavHostFragment)
+            .navController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = P04ActivityFacilityNavBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-        val navController = findNavController(R.id.nav_host_p04)
         appBarConfiguration = AppBarConfiguration(setOf(R.id.facilityListFragment))
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_p04)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

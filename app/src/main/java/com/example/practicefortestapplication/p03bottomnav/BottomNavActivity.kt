@@ -2,7 +2,8 @@ package com.example.practicefortestapplication.p03bottomnav
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -25,13 +26,17 @@ class BottomNavActivity : AppCompatActivity() {
     private lateinit var binding: P03ActivityBottomNavBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    // FragmentContainerView 로 띄운 NavHost 는 FragmentManager 에서 꺼내야 안전하다.
+    private val navController: NavController
+        get() = (supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment)
+            .navController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = P03ActivityBottomNavBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -44,7 +49,6 @@ class BottomNavActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

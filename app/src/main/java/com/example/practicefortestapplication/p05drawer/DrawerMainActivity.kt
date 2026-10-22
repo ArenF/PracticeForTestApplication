@@ -2,7 +2,8 @@ package com.example.practicefortestapplication.p05drawer
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -26,13 +27,17 @@ class DrawerMainActivity : AppCompatActivity() {
     private lateinit var binding: P05ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    // FragmentContainerView 로 띄운 NavHost 는 FragmentManager 에서 꺼내야 안전하다.
+    private val navController: NavController
+        get() = (supportFragmentManager
+            .findFragmentById(R.id.nav_host_p05) as NavHostFragment)
+            .navController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = P05ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
-
-        val navController = findNavController(R.id.nav_host_p05)
 
         // TODO: 5번 문제 - AppBarConfiguration 의 2번째 인자로 binding.drawerLayout 을 전달해
         //  최상위 화면에서 햄버거(≡) 아이콘이 나오도록 한다.
@@ -45,7 +50,6 @@ class DrawerMainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_p05)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
