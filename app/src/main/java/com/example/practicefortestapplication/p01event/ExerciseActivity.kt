@@ -27,9 +27,22 @@ class ExerciseActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // TODO: 1번 문제 - 체크박스 2개에 setOnCheckedChangeListener 등록, 각각 updateCheckSummary() 호출
-
+        binding.cbWarmUp.setOnCheckedChangeListener { button, bool ->
+            updateCheckSummary()
+        }
+        binding.cbCoolDown.setOnCheckedChangeListener { button, bool ->
+            updateCheckSummary()
+        }
         // TODO: 1번 문제 - rgType.setOnCheckedChangeListener { group, checkedId -> ... } 로 tvType 갱신 (when(checkedId))
-
+        binding.rgType.setOnCheckedChangeListener { group, i ->
+            val text = StringBuffer()
+            when (group.checkedRadioButtonId) {
+                binding.rbWalk.id -> { text.append("걷기") }
+                binding.rbRun.id -> { text.append("달리기") }
+                binding.rbBike.id -> { text.append("자전거") }
+                else -> 
+            }
+        }
         // TODO: 1번 문제 - ratingIntensity.setOnRatingBarChangeListener { ratingBar, rating, fromUser -> ... } 로 tvIntensity 갱신 (rating.toInt())
 
         // TODO: 1번 문제 - etMemo.addTextChangedListener(TextWatcher) 로 tvMemoCount 갱신 ("길이 / 50")
@@ -46,5 +59,14 @@ class ExerciseActivity : AppCompatActivity() {
      */
     private fun updateCheckSummary() {
         // TODO: 1번 문제 - 구현
+        val completedItems = StringBuffer()
+        if (binding.cbWarmUp.isChecked) completedItems.append("준비운동")
+        if (binding.cbCoolDown.isChecked) {
+            if (completedItems.isNotEmpty()) completedItems.append(", ")
+            completedItems.append("정리운동")
+        }
+        binding.tvCheck.text =
+            if (completedItems.isEmpty()) "완료 항목이 없습니다."
+            else "완료 항목: $completedItems"
     }
 }
