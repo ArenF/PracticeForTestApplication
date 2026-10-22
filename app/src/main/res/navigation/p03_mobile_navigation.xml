@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/p03_mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.practicefortestapplication.p03bottomnav.HomeFragment"
+        android:label="홈" />
+
+    <fragment
+        android:id="@+id/facilityFragment"
+        android:name="com.example.practicefortestapplication.p03bottomnav.FacilityFragment"
+        android:label="시설" />
+
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.example.practicefortestapplication.p03bottomnav.GuideFragment"
+        android:label="이용안내" />
+
+    <!-- TODO: 3번 문제 - 아래 schoolFragment 목적지를 추가한다. (id 는 메뉴 item id 와 동일, name 은 전체 클래스 경로)
+    <fragment
+        android:id="@+id/schoolFragment"
+        android:name="com.example.practicefortestapplication.p03bottomnav.SchoolFragment"
+        android:label="학교 소식" />
+    -->
+</navigation>

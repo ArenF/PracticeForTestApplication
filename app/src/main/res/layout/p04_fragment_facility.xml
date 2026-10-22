@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 도서관 카드 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="도서관"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/ivDetail1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="도서관 상세"
+            android:src="@drawable/ic_info" />
+    </LinearLayout>
+
+    <!-- 학생식당 카드 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#EEEEEE"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="학생식당"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/ivDetail2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="학생식당 상세"
+            android:src="@drawable/ic_info" />
+    </LinearLayout>
+</LinearLayout>

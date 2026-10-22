@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:text="스마트앱프로젝트 실습 문제"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="각 문제는 독립 패키지로 분리되어 있고, 핵심 로직은 // TODO: N번 문제 주석으로 비어 있습니다."
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnP01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 1. 운동 기록 화면 (이벤트 리스너)" />
+
+        <Button
+            android:id="@+id/btnP02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 2. 스피너 두 개로 목록 필터링" />
+
+        <Button
+            android:id="@+id/btnP03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 3. 하단 탭에 학교 소식 추가 (Navigation)" />
+
+        <Button
+            android:id="@+id/btnP04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 4. 시설 목록 → 상세 데이터 전달" />
+
+        <Button
+            android:id="@+id/btnP05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 5. 드로어 메뉴 + 툴바 뒤로가기" />
+
+        <Button
+            android:id="@+id/btnP06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 6. 공지사항 목록 RecyclerView" />
+
+        <Button
+            android:id="@+id/btnP07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 7. 클릭은 상세, 롱클릭은 삭제" />
+
+        <Button
+            android:id="@+id/btnP08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 8. Room으로 메모 저장" />
+
+        <Button
+            android:id="@+id/btnP09"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 9. SQLiteOpenHelper 연락처 저장" />
+
+        <Button
+            android:id="@+id/btnP10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문제 10. 통합 모의: 독서 기록 앱" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 문제 2: 상태 스피너 (android:entries 로 xml에서 채움) -->
+    <string-array name="status_filter_entries">
+        <item>전체</item>
+        <item>진행중</item>
+        <item>완료</item>
+    </string-array>
+</resources>

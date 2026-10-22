@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="운동 기록 입력"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- 체크박스 -->
+        <CheckBox
+            android:id="@+id/cbWarmUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="준비운동" />
+
+        <CheckBox
+            android:id="@+id/cbCoolDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정리운동" />
+
+        <TextView
+            android:id="@+id/tvCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="완료 항목이 없습니다." />
+
+        <!-- 라디오그룹 -->
+        <RadioGroup
+            android:id="@+id/rgType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbRun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="달리기" />
+
+            <RadioButton
+                android:id="@+id/rbWalk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="걷기" />
+
+            <RadioButton
+                android:id="@+id/rbBike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="자전거" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="운동 종류: -" />
+
+        <!-- 레이팅바 -->
+        <RatingBar
+            android:id="@+id/ratingIntensity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <TextView
+            android:id="@+id/tvIntensity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="운동 강도: 0점" />
+
+        <!-- 메모 -->
+        <EditText
+            android:id="@+id/etMemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="메모 (최대 50자)"
+            android:inputType="textMultiLine"
+            android:maxLength="50" />
+
+        <TextView
+            android:id="@+id/tvMemoCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="0 / 50" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="저장 (롱클릭: 초기화)" />
+    </LinearLayout>
+</ScrollView>

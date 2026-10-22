@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PracticeForTestApplication">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 문제별 진입 Activity -->
+        <activity android:name=".p01event.ExerciseActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".p02spinner.LostFoundActivity" android:exported="false" />
+        <activity android:name=".p03bottomnav.BottomNavActivity" android:exported="false" />
+        <activity android:name=".p04facilitydetail.FacilityNavActivity" android:exported="false" />
+        <activity android:name=".p05drawer.DrawerMainActivity" android:exported="false" />
+        <activity android:name=".p06recycler.NoticeActivity" android:exported="false" />
+        <activity android:name=".p07recycleraction.NoticeActionActivity" android:exported="false" />
+        <activity android:name=".p08memo.MemoActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".p09contact.ContactActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".p10book.BookActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

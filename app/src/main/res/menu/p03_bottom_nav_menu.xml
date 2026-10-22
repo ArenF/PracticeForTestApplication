@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/facilityFragment"
+        android:icon="@drawable/ic_location"
+        android:title="시설" />
+
+    <item
+        android:id="@+id/guideFragment"
+        android:icon="@drawable/ic_info"
+        android:title="이용안내" />
+
+    <!-- TODO: 3번 문제 - 아래 "학교 소식" item 을 추가한다. (id 는 graph 의 fragment id 와 반드시 동일)
+    <item
+        android:id="@+id/schoolFragment"
+        android:icon="@drawable/ic_info"
+        android:title="학교 소식" />
+    -->
+</menu>
